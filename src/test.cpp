@@ -1,6 +1,6 @@
+#include <cassert>
 #include <iostream>
 #include <vector>
-#include <cassert>
 
 #include "./add.cpp"
 
@@ -12,5 +12,10 @@ int main() {
 
   add(z, x, y);
 
-  assert(z == 7);
+  if (z != 7) {
+    std::cout << "ERROR" << std::endl;
+    std::cout << "expected : " << 7 << std::endl;
+    std::cout << "actual : " << z << std::endl;
+    exit(1);
+  }
 }
